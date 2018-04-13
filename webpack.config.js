@@ -11,6 +11,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { loader: 'style-loader' };
 
+// get that autoprefixer
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   mode: env,
@@ -38,9 +40,28 @@ module.exports = {
             },
           },
           {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer()],
+              sourceMap: true,
+            },
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              name: '[name].[ext]',
             },
           },
         ],

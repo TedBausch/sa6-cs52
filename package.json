@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-serve ./webpack.config.js"
+    "start": "NODE_ENV=development webpack-serve ./webpack.config.js",
+    "build": "yarn clean; NODE_ENV=production webpack --colors",
+    "clean": "rimraf dist",
+    "deploy": "yarn build; surge -p dist -d tedbausch-cs52-starterkit.surge.sh; yarn clean"
   },
   "repository": "https://github.com/dartmouth-cs52-18S/starterpack-TedBausch.git",
   "author": "Ted <tedbausch@gmail.com>",
   "license": "WTFPL",
   "devDependencies": {
+    "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -21,11 +25,14 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.8.3",
+    "postcss-loader": "^2.1.3",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
+    "surge": "^0.20.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
     "webpack-serve": "^0.3.1"
