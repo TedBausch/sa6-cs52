@@ -1,0 +1,16 @@
+{
+  "name": "starterpack-TedBausch",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": "https://github.com/dartmouth-cs52-18S/starterpack-TedBausch.git",
+  "author": "Ted <tedbausch@gmail.com>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-serve": "^0.3.1"
+  }
+}
