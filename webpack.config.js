@@ -8,13 +8,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: env,
-  entry: ['./src'], // this is where our app lives
+  entry: [ 'babel-polyfill', './src' ], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        // use babel loader
+        use: [
+        { loader: 'babel-loader'}
+      ]
       },
     ],
   },
