@@ -1,1 +1,1 @@
-A starterkit combining linting, sass, webpack, and babel javascript transpilation
+Basic video chooser written using React, and deployed with webpack. 
