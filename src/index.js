@@ -3,18 +3,31 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
+import youtubeSearch from './youtube-api';
+import VideoList from './components/video_list';
 import './style.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {}; // no state yet
+    youtubeSearch('pixar').then((videos) => {
+      this.setState({
+        videos,
+        // selectedVideo: videos[0],
+      });
+    });
+
+    this.state = {
+      videos: [],
+      // selectedVideo: null,
+    };
   }
 
   render() {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
