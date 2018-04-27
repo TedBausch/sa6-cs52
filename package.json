@@ -6,7 +6,7 @@
     "start": "NODE_ENV=development webpack-serve ./webpack.config.js",
     "build": "yarn clean; NODE_ENV=production webpack --colors",
     "clean": "rimraf dist",
-    "deploy": "yarn build; surge -p dist -d tedbausch-routings.surge.sh; yarn clean"
+    "deploy": "yarn build; surge -p dist -d tedbausch-redux.surge.sh; yarn clean"
   },
   "repository": "https://github.com/dartmouth-cs52-18S/starterpack-TedBausch.git",
   "author": "Ted <tedbausch@gmail.com>",

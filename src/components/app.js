@@ -1,13 +1,20 @@
 // es6 style imports
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
-import './style.scss';
+import Counter from '../containers/counter';
+import Controls from '../containers/controls';
+import '../style.scss';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
 };
 const Welcome = (props) => {
-  return <div>Welcome</div>;
+  return (
+    <div>
+      <div>Welcome</div>
+      <Counter />
+      <Controls />
+    </div>);
 };
 
 const Nav = (props) => {
